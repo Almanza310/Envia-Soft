@@ -381,66 +381,67 @@
                         <div class="space-y-4">
                             @foreach($matrices->where('phase', 'planear') as $matrix)
                                 <div x-show="activeCategory === '{{ $matrix->category ?: 'matrices' }}'" 
-                                     class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-black/20 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 flex items-center justify-between animate-slide-up">
-                                    <div class="flex items-center gap-6">
-                                        <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white group-hover:rotate-6 transition-all duration-500 shadow-sm relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-                                            @if($matrix->extension == 'pdf')
-                                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                            @elseif($matrix->extension == 'link')
-                                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                                            @else
-                                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6M10 21h4"></path></svg>
-                                            @endif
+                                     class="group bg-white p-5 rounded-3xl border border-gray-100 hover:border-black/20 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 flex items-center gap-4 animate-slide-up">
+                                    
+                                    <!-- Icon -->
+                                    <div class="flex-shrink-0 w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white group-hover:rotate-6 transition-all duration-500 shadow-sm relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                                        @if($matrix->extension == 'pdf')
+                                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                        @elseif($matrix->extension == 'link')
+                                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                        @else
+                                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6M10 21h4"></path></svg>
+                                        @endif
+                                    </div>
+
+                                    <!-- Content (shrinks to fit) -->
+                                    <div class="flex-1 min-w-0 flex items-center gap-6">
+                                        <!-- Date -->
+                                        <div class="flex-shrink-0 flex items-center gap-2">
+                                            <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                            <span class="text-[11px] font-black text-black uppercase tracking-[0.15em] whitespace-nowrap">{{ $matrix->created_at->format('d M, Y') }}</span>
                                         </div>
-                                        <div class="flex items-center gap-12">
-                                            <!-- Date Section -->
-                                            <div class="flex items-center gap-3 w-40">
-                                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                                <span class="text-[11px] font-black text-black uppercase tracking-[0.2em]">{{ $matrix->created_at->format('d M, Y') }}</span>
-                                            </div>
 
-                                            <div class="h-6 w-px bg-gray-100"></div>
+                                        <div class="flex-shrink-0 h-5 w-px bg-gray-100"></div>
 
-                                            <!-- Category Section -->
-                                            <div class="w-44 flex items-center justify-center">
-                                                <span class="text-[11px] font-black text-black uppercase tracking-[0.2em] truncate">
-                                                    {{ $matrix->category ?: 'Matrices' }}
-                                                </span>
-                                            </div>
+                                        <!-- Category -->
+                                        <span class="flex-shrink-0 text-[11px] font-black text-black uppercase tracking-[0.15em]">
+                                            {{ $matrix->category ?: 'Matrices' }}
+                                        </span>
 
-                                            <div class="h-6 w-px bg-gray-100"></div>
+                                        <div class="flex-shrink-0 h-5 w-px bg-gray-100"></div>
 
-                                            <!-- Name Section -->
-                                            <div class="min-w-[250px] max-w-sm flex items-center gap-4">
-                                                <h5 class="text-[11px] font-black text-black uppercase tracking-[0.2em] truncate group-hover:text-red-600 transition-colors">{{ $matrix->name }}</h5>
-                                                <span class="px-2 py-0.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-black uppercase text-gray-400 tracking-widest">
-                                                    {{ $matrix->extension }}
-                                                </span>
-                                            </div>
+                                        <!-- Name + Extension -->
+                                        <div class="min-w-0 flex items-center gap-3">
+                                            <h5 class="text-[11px] font-black text-black uppercase tracking-[0.15em] truncate group-hover:text-red-600 transition-colors">{{ $matrix->name }}</h5>
+                                            <span class="flex-shrink-0 px-2 py-0.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-black uppercase text-gray-400 tracking-widest">
+                                                {{ $matrix->extension }}
+                                            </span>
+                                        </div>
 
-                                            <div class="h-6 w-px bg-gray-100"></div>
-                                            
-                                            <!-- Status Section -->
-                                            <div class="flex items-center gap-3 w-40">
-                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Acceso Restringido</span>
-                                            </div>
+                                        <div class="flex-shrink-0 h-5 w-px bg-gray-100"></div>
+                                        
+                                        <!-- Status -->
+                                        <div class="flex-shrink-0 flex items-center gap-2">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none whitespace-nowrap">Acceso Restringido</span>
                                         </div>
                                     </div>
 
-                                    <div class="flex items-center gap-3">
+                                    <!-- Action Buttons (never shrink) -->
+                                    <div class="flex-shrink-0 flex items-center gap-2">
                                         @if($matrix->extension == 'link')
-                                            <a href="{{ $matrix->drive_link }}" target="_blank" class="w-11 h-11 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-110 transition-all duration-300" title="Abrir enlace">
-                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                            <a href="{{ $matrix->drive_link }}" target="_blank" class="w-10 h-10 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-110 transition-all duration-300" title="Abrir enlace">
+                                                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                             </a>
                                         @else
-                                            <a href="{{ route('phva.matrices.download', $matrix) }}" class="w-11 h-11 bg-green-50 border border-green-200 rounded-xl flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:shadow-lg hover:shadow-green-500/20 hover:scale-110 transition-all duration-300" title="Descargar archivo">
-                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                            <a href="{{ route('phva.matrices.download', $matrix) }}" class="w-10 h-10 bg-green-50 border border-green-200 rounded-xl flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:shadow-lg hover:shadow-green-500/20 hover:scale-110 transition-all duration-300" title="Descargar archivo">
+                                                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                             </a>
                                         @endif
-                                        <button type="button" onclick="confirmDelete('matrix-{{ $matrix->id }}')" class="w-11 h-11 bg-red-50 border border-red-200 rounded-xl flex items-center justify-center text-red-500 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20 hover:scale-110 transition-all duration-300" title="Eliminar">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                        <button type="button" onclick="confirmDelete('matrix-{{ $matrix->id }}')" class="w-10 h-10 bg-red-50 border border-red-200 rounded-xl flex items-center justify-center text-red-500 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20 hover:scale-110 transition-all duration-300" title="Eliminar">
+                                            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                         </button>
                                         <form id="delete-form-matrix-{{ $matrix->id }}" action="{{ route('phva.matrices.destroy', $matrix) }}" method="POST" class="hidden">
                                             @csrf
