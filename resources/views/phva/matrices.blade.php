@@ -429,17 +429,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-3">
                                         @if($matrix->extension == 'link')
-                                            <a href="{{ $matrix->drive_link }}" target="_blank" class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white hover:rotate-12 transition-all shadow-sm" title="Abrir enlace">
+                                            <a href="{{ $matrix->drive_link }}" target="_blank" class="w-11 h-11 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-110 transition-all duration-300" title="Abrir enlace">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                             </a>
                                         @else
-                                            <a href="{{ route('phva.matrices.download', $matrix) }}" class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 hover:bg-green-50 hover:text-green-600 hover:rotate-12 transition-all shadow-sm" title="Descargar archivo">
+                                            <a href="{{ route('phva.matrices.download', $matrix) }}" class="w-11 h-11 bg-green-50 border border-green-200 rounded-xl flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:shadow-lg hover:shadow-green-500/20 hover:scale-110 transition-all duration-300" title="Descargar archivo">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                             </a>
                                         @endif
-                                        <button type="button" onclick="confirmDelete('matrix-{{ $matrix->id }}')" class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white hover:-rotate-12 transition-all shadow-sm" title="Eliminar">
+                                        <button type="button" onclick="confirmDelete('matrix-{{ $matrix->id }}')" class="w-11 h-11 bg-red-50 border border-red-200 rounded-xl flex items-center justify-center text-red-500 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg hover:shadow-red-500/20 hover:scale-110 transition-all duration-300" title="Eliminar">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                         </button>
                                         <form id="delete-form-matrix-{{ $matrix->id }}" action="{{ route('phva.matrices.destroy', $matrix) }}" method="POST" class="hidden">
