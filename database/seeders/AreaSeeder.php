@@ -19,10 +19,12 @@ class AreaSeeder extends Seeder
             'pitalito', 
             'pt', 
             'garzon', 
-            'financiera administracion', 
+            'financiera',
+            'administracion', 
             'gestion humana', 
-            'laplaza', 
-            'granjas'
+            'la plata', 
+            'granjas',
+            'despacho'
         ];
 
         foreach ($areas as $area) {
