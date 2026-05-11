@@ -2,7 +2,7 @@
     <!-- Logo section -->
     <div class="px-6 py-6 border-b border-white/10 mb-4 sticky top-0 bg-[#E30613] z-10 w-full flex justify-center items-center" style="background-color: #E30613 !important;">
         <a href="{{ route('dashboard') }}" class="flex items-center justify-center transition-transform hover:scale-105 duration-300 w-full">
-            <img src="{{ asset('images/images.png') }}" alt="ENVIA" class="h-16 w-auto object-contain drop-shadow-lg">
+            <img src="{{ asset('images/images.png') }}" alt="ENVIA" class="h-24 w-auto object-contain drop-shadow-lg">
         </a>
     </div>
 
