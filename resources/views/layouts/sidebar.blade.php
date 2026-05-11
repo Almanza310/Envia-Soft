@@ -1,8 +1,8 @@
 <aside class="w-64 bg-[#E30613] border-r border-red-800 flex flex-col overflow-y-auto shadow-2xl" style="background-color: #E30613 !important;">
     <!-- Logo section -->
     <div class="px-6 py-6 border-b border-white/10 mb-4 sticky top-0 bg-[#E30613] z-10 w-full flex justify-center items-center" style="background-color: #E30613 !important;">
-        <a href="{{ route('dashboard') }}" class="flex items-center justify-center transition-transform hover:scale-105 duration-300 bg-white py-3 px-4 rounded-2xl shadow-xl w-full border-b-4 border-gray-200">
-            <img src="{{ asset('images/images.png') }}" alt="ENVIA" class="h-10 w-auto object-contain">
+        <a href="{{ route('dashboard') }}" class="flex items-center justify-center transition-transform hover:scale-105 duration-300 py-4 px-5 rounded-2xl shadow-xl w-full" style="background: linear-gradient(135deg, #7A0A0A 0%, #4A0505 100%); border-bottom: 4px solid rgba(0,0,0,0.2);">
+            <img src="{{ asset('images/images.png') }}" alt="ENVIA" class="h-10 w-auto object-contain drop-shadow-lg">
         </a>
     </div>
 

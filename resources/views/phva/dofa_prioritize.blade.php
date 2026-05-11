@@ -11,7 +11,9 @@
                     <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em] mt-2">{{ $phvaYear->year }} • Gestión Estratégica</p>
                 </div>
             </div>
-            <img src="{{ asset('images/images.png') }}" alt="Logo ENVIA" class="h-10 w-auto opacity-90">
+            <div class="px-5 py-3 rounded-2xl shadow-lg" style="background: linear-gradient(135deg, #B91C1C 0%, #7A0A0A 50%, #4A0505 100%);">
+                <img src="{{ asset('images/images.png') }}" alt="Logo ENVIA" class="h-10 w-auto drop-shadow-md">
+            </div>
         </div>
     </x-slot>
 
