@@ -41,20 +41,6 @@
                         <div class="space-y-5">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <x-input-label for="date" :value="__('Fecha')" class="text-gray-700 font-semibold mb-1" />
-                                    <x-text-input id="date" class="block mt-1 w-full border-gray-200 rounded-xl" type="date" name="date" :value="old('date', date('Y-m-d'))" required />
-                                </div>
-                                <div>
-                                    <x-input-label for="quantity" :value="__('Cantidad')" class="text-gray-700 font-semibold mb-1" />
-                                    <x-text-input id="quantity" class="block mt-1 w-full border-gray-200 rounded-xl" type="number" name="quantity" :value="old('quantity')" required min="1" placeholder="Ej. 5" />
-                                </div>
-                            </div>
-                            <div>
-                                <x-input-label for="name" :value="__('Nombre (Opcional)')" class="text-gray-700 font-semibold mb-1" />
-                                <x-text-input id="name" class="block mt-1 w-full border-gray-200 rounded-xl" type="text" name="name" :value="old('name')" placeholder="Ej. Resmas de papel Bond" />
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
                                     <x-input-label for="area" :value="__('Área')" class="text-gray-700 font-semibold mb-1" />
                                     <select id="area" name="area" class="border-gray-200 focus:border-[#C12026] focus:ring-[#C12026] rounded-xl shadow-sm block mt-1 w-full font-medium" required>
                                         <option value="" disabled selected>Seleccione área</option>
@@ -73,6 +59,20 @@
                                         <option value="toner" {{ old('consumption') == 'toner' ? 'selected' : '' }}>Toner</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <x-input-label for="date" :value="__('Fecha')" class="text-gray-700 font-semibold mb-1" />
+                                    <x-text-input id="date" class="block mt-1 w-full border-gray-200 rounded-xl" type="date" name="date" :value="old('date', date('Y-m-d'))" required />
+                                </div>
+                                <div>
+                                    <x-input-label for="quantity" :value="__('Cantidad')" class="text-gray-700 font-semibold mb-1" />
+                                    <x-text-input id="quantity" class="block mt-1 w-full border-gray-200 rounded-xl" type="number" name="quantity" :value="old('quantity')" required min="1" placeholder="Ej. 5" />
+                                </div>
+                            </div>
+                            <div>
+                                <x-input-label for="name" :value="__('Nombre (Opcional)')" class="text-gray-700 font-semibold mb-1" />
+                                <x-text-input id="name" class="block mt-1 w-full border-gray-200 rounded-xl" type="text" name="name" :value="old('name')" placeholder="Ej. Resmas de papel Bond" />
                             </div>
                             
                             <div class="mt-8 flex justify-end space-x-3 pt-4 border-t border-gray-50">
@@ -339,20 +339,6 @@
                                                     <div class="space-y-5">
                                                         <div class="grid grid-cols-2 gap-4">
                                                             <div>
-                                                                <x-input-label value="Fecha" class="text-gray-700 font-semibold mb-1" />
-                                                                <x-text-input name="date" type="date" class="w-full border-gray-200 rounded-xl" :value="old('date', $item->date)" required />
-                                                            </div>
-                                                            <div>
-                                                                <x-input-label value="Cantidad" class="text-gray-700 font-semibold mb-1" />
-                                                                <x-text-input name="quantity" type="number" class="w-full border-gray-200 rounded-xl" :value="old('quantity', $item->quantity)" required min="1" />
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <x-input-label value="Nombre (Opcional)" class="text-gray-700 font-semibold mb-1" />
-                                                            <x-text-input name="name" type="text" class="w-full border-gray-200 rounded-xl" :value="old('name', $item->name)" />
-                                                        </div>
-                                                        <div class="grid grid-cols-2 gap-4">
-                                                            <div>
                                                                 <x-input-label value="Área" class="text-gray-700 font-semibold mb-1" />
                                                                 <select name="area" class="border-gray-200 focus:border-[#C12026] focus:ring-[#C12026] rounded-xl shadow-sm block mt-1 w-full font-medium" required>
                                                                     @foreach($areas as $area)
@@ -368,6 +354,20 @@
                                                                     @endforeach
                                                                 </select>
                                                             </div>
+                                                        </div>
+                                                        <div class="grid grid-cols-2 gap-4">
+                                                            <div>
+                                                                <x-input-label value="Fecha" class="text-gray-700 font-semibold mb-1" />
+                                                                <x-text-input name="date" type="date" class="w-full border-gray-200 rounded-xl" :value="old('date', $item->date)" required />
+                                                            </div>
+                                                            <div>
+                                                                <x-input-label value="Cantidad" class="text-gray-700 font-semibold mb-1" />
+                                                                <x-text-input name="quantity" type="number" class="w-full border-gray-200 rounded-xl" :value="old('quantity', $item->quantity)" required min="1" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <x-input-label value="Nombre (Opcional)" class="text-gray-700 font-semibold mb-1" />
+                                                            <x-text-input name="name" type="text" class="w-full border-gray-200 rounded-xl" :value="old('name', $item->name)" />
                                                         </div>
                                                         <div class="mt-8 flex justify-end space-x-3 pt-4 border-t border-gray-50">
                                                             <button type="button" x-on:click="$dispatch('close')" class="inline-flex justify-center items-center px-6 py-2.5 bg-gray-50 border border-gray-200 rounded-xl font-bold text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200">
