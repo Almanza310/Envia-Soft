@@ -280,12 +280,13 @@
                     </div>
 
                     <!-- Bottom: Records Section (Table/List) -->
-                    <div class="w-full mt-20">
+                    <div class="w-full mt-8">
                         <div class="flex flex-col md:flex-row items-end md:items-center justify-between gap-6 mb-4">
                             <div>
                             </div>
                             
-                            <div cla                                <!-- CSS to force hide native select arrows -->
+                            <div class="w-full">
+                                <!-- CSS to force hide native select arrows -->
                                 <style>
                                     select {
                                         -webkit-appearance: none !important;
@@ -301,7 +302,7 @@
                                 <template x-if="activeCategory === 'dofa'">
                                     <div class="animate-slide-up">
                                         <!-- Physical Spacer -->
-                                        <div class="h-20"></div>
+                                        <div class="h-4"></div>
 
                                         <!-- Unified Horizontal Row (Perfect Centering) -->
                                         <div class="w-full overflow-x-auto no-scrollbar pb-6 px-6">
