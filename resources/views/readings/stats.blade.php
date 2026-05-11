@@ -19,8 +19,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Contextual Navigation -->
-            <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100 pb-4 gap-4">
-                <div class="flex items-center space-x-4">
+            <div class="mb-6 flex flex-col xl:flex-row xl:items-center justify-between border-b border-gray-100 pb-4 gap-4">
+                <div class="flex items-center space-x-4 flex-shrink-0">
                     <a href="{{ route('readings.index') }}" class="inline-flex items-center text-[10px] font-bold text-gray-400 hover:text-[#C12026] transition-all duration-500 uppercase tracking-[0.3em] group">
                         <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                         Volver a Lecturas
@@ -28,7 +28,7 @@
                     <span class="text-gray-300">|</span>
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap italic">Dashboard / Estadísticas</span>
                 </div>
-                <form method="GET" action="" class="flex flex-col sm:flex-row items-center gap-3">
+                <form method="GET" action="" class="flex flex-wrap items-center xl:justify-end gap-3">
                     <div class="flex items-center bg-gray-50 rounded-xl border border-gray-200 px-3 py-1 shadow-sm">
                         <label class="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mr-3">Bodega:</label>
                         <select name="warehouse" onchange="this.form.submit()" class="text-xs border-transparent rounded-lg focus:border-none focus:ring-0 bg-transparent font-bold text-[#C12026] py-1 pr-8 pl-1 cursor-pointer">
