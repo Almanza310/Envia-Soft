@@ -25,8 +25,8 @@
 
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 relative z-10 w-full px-4">
             <div class="mb-6">
-                <a href="/" class="inline-flex items-center justify-center px-8 py-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #B91C1C 0%, #7A0A0A 50%, #4A0505 100%);">
-                    <img src="{{ asset('images/images.png') }}" alt="Logo ENVIA" class="h-14 w-auto drop-shadow-lg">
+                <a href="/" class="inline-flex items-center justify-center transition-all duration-300 hover:scale-105">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo ENVIA" class="h-28 w-auto drop-shadow-md">
                 </a>
             </div>
 
